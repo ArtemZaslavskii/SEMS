@@ -84,7 +84,7 @@ def get_forecast(city: str) -> str:
 
         result = f"📅 Прогноз на 5 дней для {city_name}, {country}:\n\n"
 
-        # Фильтруем записи — берём только время около 12:00
+        # Фильтруем записи
         seen_dates = set()
         for item in data["list"]:
             dt_txt = item["dt_txt"]          # например "2024-06-03 12:00:00"
