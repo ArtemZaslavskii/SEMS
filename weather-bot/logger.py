@@ -7,9 +7,9 @@ def log(user_id: int, action: str, detail: str = ""):
     """
     Записывает действие пользователя в его лог-файл.
     
-    user_id — уникальный ID пользователя из Telegram
-    action  — название действия (например "WEATHER", "FORECAST")
-    detail  — дополнительная информация (город, результат и т.д.)
+    user_id уникальный ID пользователя из Telegram
+    action название действия (например "WEATHER", "FORECAST")
+    detail дополнительная информация (город, результат и т.д.)
     """
     # Создаём папку logs если её нет
     os.makedirs(LOGS_DIR, exist_ok=True)
@@ -34,7 +34,7 @@ def log(user_id: int, action: str, detail: str = ""):
 def get_history(user_id: int) -> str:
     """
     Читает и возвращает историю пользователя из его лог-файла.
-    Если файла нет — возвращает сообщение что истории пока нет.
+    Если файла нет возвращает сообщение что истории пока нет.
     """
     log_path = os.path.join(LOGS_DIR, f"{user_id}.log")
 
