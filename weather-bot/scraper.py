@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # Библиотека для парсинга HTML
 
 
 def get_weather_news() -> str:
@@ -38,7 +38,7 @@ def get_weather_news() -> str:
             title = item.get_text(strip=True)
             href  = item.get("href", "")
 
-            # Если ссылка относительная — добавляем домен
+            # Если ссылка относительная добавляем домен
             if href and not href.startswith("http"):
                 href = "https://meteoinfo.ru" + href
 
